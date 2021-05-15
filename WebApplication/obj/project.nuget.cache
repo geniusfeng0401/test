@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T1PB8far038dsSJVs3TdfLmUdxaWLXSs2UMNbvxs++x9RtVeFWTurYqotqwktXTFLKl48bPMuRbhwb9Hng7hoQ==",
+  "success": true,
+  "projectFilePath": "D:\\Temp\\Interview\\UrlShortener\\WebApplication\\WebApplication\\WebApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UF-YiFeng.Wong\\.nuget\\packages\\litedb\\5.0.10\\litedb.5.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

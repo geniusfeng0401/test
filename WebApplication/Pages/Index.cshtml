@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    <header>
+        <h1>URL Shortener</h1>
+    </header>
+    <section id="urlForm">
+        <input type="url" name="url" id="txtUrl" placeholder="Input your URL here" />
+        <a href="#" id="btnSubmit">Click to Shorten</a>
+        <p id="urlResult"></p>
+    </section>
+</div>
+@section scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                $.ajax({
+                    url: "test/url/shortenurl",
+                    type: "POST",
+                    data: '{ "url": ' + JSON.stringify($('#txtUrl').val()) + '}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    async: true,
+                    success: function (data) {
+                        let section = document.getElementById('urlResult');
+                        if (data.isError) {
+                            section.innerHTML = `<span>Error: ${data.errorMessage}</span>`;
+                        }
+                        else {
+                            section.innerHTML = `<span>Short Url: </span><a id="link" href="${data.shortenUrl}">${data.shortenUrl}</a>`;
+                        }
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+
+}
